@@ -1,0 +1,9 @@
+package com.myProjectForResume;
+
+public interface AbstractForDepozite {
+
+    int OpenDepositeOne(int a,int b,int c,int d, int e);
+    int OpenDepositeTwo(int a,int b,int c,int d,int e,int f);
+    int OpenDepositeTrhee(int a, int b, int c,int d);
+}
+

@@ -1,0 +1,20 @@
+package com.myProjectForResume;
+
+public class FisicleClient extends Client {
+
+    public FisicleClient(String name,
+                         String sourname,
+                         String number,
+                         String country,
+                         String password,
+                         String passwordchek,
+                         Integer choseface) {
+        super(name, sourname, number, country, password, passwordchek, choseface);
+    }
+    @Override
+    public void OpenMenu() {
+        System.out.println("Credites(1)");
+        System.out.println("Depozites(2)");
+        System.out.println("Transfers(3)");
+    }
+}

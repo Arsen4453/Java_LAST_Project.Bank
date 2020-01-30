@@ -1,0 +1,53 @@
+package com.myProjectForResume;
+import java.util.Scanner;
+
+public class Credite implements AbstractForCredite {
+    Scanner in = new Scanner(System.in);
+
+    double CZ; // сумма займа
+    double P; // ставка процента за один месяц
+    double CK; // срок кредитования
+    double result = 0;
+
+    double P2 = 0;
+    double O2 = 0;
+    double S2 = 0;
+    double result2 = 0;
+
+    public Credite(double CZ, double P, double CK, double result, double P2,double O2,double S2,double result2) {
+        this.CZ = CZ;
+        this.P = P;
+        this.CK = CK;
+        this.result = result;
+
+        this.P2 = P2;
+        this.O2 = O2;
+        this.S2 = S2;
+        this.result2 = result2;
+    }
+
+    @Override
+    public double CalculateProcentTwo(double a, double b, double c, double d) {
+        System.out.print("Enter debt balance: ");
+        O2 = in.nextDouble();
+        System.out.println("Enter bid%: ");
+        S2 = in.nextDouble();
+        P2 = O2 *(S2/12);
+        System.out.println("Your monthly loan overpayment: " + P2);
+        return P2;
+    }
+
+    @Override
+    public double CalculateProcentOne(double a, double b, double c, double e) {
+        System.out.print("Enter loan amount: ");
+        CZ = in.nextDouble();
+        System.out.println("Enter interest rate for one month: ");
+        P = in.nextDouble();
+        System.out.println("Enter loan term: ");
+        CK = in.nextInt();
+        result = CK*(P+(P/(1+P)*CK-1));
+        System.out.println("The amount of the monthly payment is: " + result);
+        return result;
+    }
+
+}

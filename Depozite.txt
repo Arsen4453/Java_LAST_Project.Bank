@@ -1,0 +1,86 @@
+package com.myProjectForResume;
+
+import java.util.Scanner;
+
+public class Depozite implements AbstractForDepozite{
+    Scanner in = new Scanner(System.in);
+
+    int S = 0;
+    int n2 = 0;
+    double S3 = 0;
+    int P = 0;
+    int s2 = 0;
+    double P3 = 0;
+    int I = 0;
+    int P2 = 0;
+    double N3 = 0;
+    int t = 0;
+    double N2 = 0;
+    int T3 = 0;
+    int K = 0;
+    int d2 = 0;
+    int D2 = 0;
+
+
+    public Depozite(int S, int P, int I, int t, int K, int n2, int s2, int P2, int N2,
+                    int d2, int D2, int S3, int P3, double N3, int T3) {
+        this.S = S;
+        this.P = P;
+        this.I = I;
+        this.t = t;
+        this.K = K;
+
+        this.n2 = n2;
+        this.s2 = s2;
+        this.P2 = P2;
+        this.N2 = N2;
+        this.d2 = d2;
+        this.D2 = D2;
+
+        this.S3 = S3;
+        this.P3 = P3;
+        this.N3 = N3;
+        this.T3 = T3;
+    }
+
+    public int OpenDepositeTrhee(int S3, int P3, int N3, int T3) {
+        System.out.print("Initial amount: ");
+        P3 = in.nextInt();
+        System.out.println("Annual percentage%: ");
+        N3 = in.nextInt();
+        System.out.println("Number of quarters during which the deposit is open: ");
+        T3 = in.nextInt();
+        S3 = P3 * (1+N3/4)*T3;
+        System.out.println("At the end of the term, your profit will be: " + S3);
+        return S3;
+    }
+
+    public int OpenDepositeTwo(int n2,int s2,int P2, int N2, int d2,int D2) {
+        d2 = 30;
+        D2 = 365;
+        System.out.print("Initial amount: ");
+        P2 = in.nextInt();
+        System.out.println("Annual rate: ");
+        N2 = in.nextInt();
+        S = P2*1+(N2*d2)/100*D2 *n2;
+        System.out.println("At the end of the term, your profit will be " + S );
+        return S;
+    }
+
+    public int OpenDepositeOne(int S, int P, int I,int t, int K) {
+        System.out.print("Enter the original amount: ");
+        P = in.nextInt();
+        System.out.println("Size% of the rate for the year: ");
+        I = in.nextInt();
+        System.out.print("Number of days accruing%: ");
+        t = in.nextInt();
+        System.out.println("Number of days per year on the calendar:");
+        K = in.nextInt();
+
+        S = (P*I*t/K)/100;
+        System.out.print("Through " + K + " days you will earn + " + S + " $");
+
+        return S;
+    }
+
+}

@@ -1,0 +1,121 @@
+// Проект работает,не доделан..
+package com.myProjectForResume;
+
+import java.util.Scanner;
+
+public class Application {
+    public static void main(String[] args) throws InterruptedException {
+
+        Scanner in = new Scanner(System.in);
+
+        long inputNumberCardFirst[] = new long[1];
+        long inputNumberCardSecond[] = new long[1];
+        int sumOfTransfer$ = 0;
+        // String checkTransferOne = "";
+        int openmenu = 0;
+        int chosemenu = 0;
+        int choseDeposite = 0;
+        int choseCredite = 0;
+        int choseTransfer = 0;
+
+        Client client = new Client("", "", "", "", "", "", 0);
+        client.Face();
+        LegalClient lc = new LegalClient("", "", "", "", "",
+                "", 0);
+        FisicleClient fc = new FisicleClient("", "", "", "", "", "",
+                0);
+        Depozite dp = new Depozite(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0);
+        Credite cd = new Credite(0, 0, 0, 0,0,0,0,0);
+
+        Transfer tf = new Transfer();
+
+        System.out.println("Do you wont to Open menu ? yes(1)/no(2)");
+
+        openmenu = in.nextInt();
+        if (openmenu == 1) {
+            lc.OpenMenu();
+            chosemenu = in.nextInt();
+            if (chosemenu == 1) {
+                System.out.println("Choose: ");
+                System.out.println("open a deposit with annual capitalization --(1)");
+                System.out.println("Open a deposit with a monthly capitalization --(2)");
+                System.out.println("Open a deposit with quarterly capitalization --(3)");
+
+                choseDeposite = in.nextInt();
+                switch (choseDeposite) {
+                    case 1: {
+                        dp.OpenDepositeOne(0, 0, 0, 0, 0);
+                        break;
+                    }
+                    case 2: {
+                        dp.OpenDepositeTwo(0, 0, 0, 0, 0, 0);
+                        break;
+                    }
+                    case 3: {
+                        dp.OpenDepositeTrhee(0, 0, 0, 0);
+                        break;
+                    }
+
+                    default: System.out.println("Error!");
+                }
+
+            }
+            if (chosemenu == 2) {
+                System.out.println("Choose: ");
+                System.out.println("Calculation of loan annuity payments: (1)");
+                System.out.println("Calculation of interest on a loan: (2)");
+
+                choseCredite = in.nextInt();
+                switch (choseCredite) {
+                    case 1: {
+                        cd.CalculateProcentOne(0, 0, 0, 0);
+                        break;
+                    }
+                    case 2: {
+                        cd.CalculateProcentTwo(0,0,0,0);
+                        break;
+                    }
+                    default: System.out.println("Error!");
+                }
+            }
+
+            if(chosemenu == 3) {
+                System.out.println("Choose: ");
+                System.out.println("Transfer money to a card(1)");
+                System.out.println("Transfer money to a phone(2)");
+
+                choseTransfer = in.nextInt();
+                switch (choseTransfer) {
+                    case 1: {
+                        System.out.println("Card number with which the transfer will go: ");
+                        for(int i = 0; i < inputNumberCardFirst.length; i++) {
+                            inputNumberCardFirst[i] = in.nextLong();
+                        }
+                        System.out.println("Enter the transfer amount: ");
+                        sumOfTransfer$ = in.nextInt();
+                        System.out.println("Enter the card number to which funds will be credited: ");
+                        for(int i =0; i < inputNumberCardSecond.length; i++) {
+                            inputNumberCardSecond[i] = in.nextLong();
+                        }
+                        System.out.println("------------------");
+
+                        for(int i = 0; i < 1; i++) {
+                            System.out.println("From card " + inputNumberCardFirst[i]);
+                        }
+                        for(int i = 0; i < 1; i++) {
+                            System.out.println("On card " + inputNumberCardSecond[i]);
+                        }
+                        System.out.println("Will be credited " + sumOfTransfer$ + " UAH, confirm the operation? (Yes / No)");
+                        tf.checkOne();
+                    }
+                }
+            }
+
+            if (openmenu == 2) {
+                System.out.print("Exit!!!");
+                return;
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+package com.myProjectForResume;
+
+public abstract class Bank {
+
+    abstract public void Fio();
+    abstract public void Face();
+    public void OpenMenu() {};
+    public void WishDepozite() {};
+    public void WishCredite() {};
+
+}

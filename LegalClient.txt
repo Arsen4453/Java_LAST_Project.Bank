@@ -1,0 +1,21 @@
+package com.myProjectForResume;
+
+public class LegalClient extends Client {
+
+    public LegalClient(String name,
+                       String sourname,
+                       String number,
+                       String country,
+                       String password,
+                       String passwordchek,
+                       Integer choseface) {
+        super(name, sourname, number, country, password, passwordchek, choseface);
+    }
+    @Override
+    public void OpenMenu() {
+        System.out.println("Depozites --(1)");
+        System.out.println("Credites  --(2)");
+        System.out.println("Transfers --(3)");
+
+    }
+}

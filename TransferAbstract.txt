@@ -1,0 +1,6 @@
+package com.myProjectForResume;
+
+public interface TransferAbstract {
+    int TranOnFhone();
+    String checkOne();
+}

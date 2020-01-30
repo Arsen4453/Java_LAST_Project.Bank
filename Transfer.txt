@@ -1,0 +1,27 @@
+package com.myProjectForResume;
+
+import java.util.Scanner;
+public class Transfer implements TransferAbstract {
+
+    Scanner in = new Scanner(System.in);
+    String checkTransferOne;
+
+    @Override
+    public String checkOne() {
+        checkTransferOne = in.nextLine();
+
+        if(checkTransferOne.contains("Yes")) {
+            System.out.println("The translation was successful!");
+        }
+        if(checkTransferOne.contains("No")) {
+            System.out.println("Operation aborted and successfully canceled\n!");
+        }
+        return checkTransferOne;
+
+    }
+
+    @Override
+    public int TranOnFhone() {
+        return 0;
+    }
+}

@@ -1,0 +1,6 @@
+package com.myProjectForResume;
+
+public interface AbstractForCredite {
+    double CalculateProcentOne(double a,double b, double c, double e);
+    double CalculateProcentTwo(double a, double b, double c,double d);
+}

@@ -1,0 +1,76 @@
+package com.myProjectForResume;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Client extends Bank {
+    Scanner in = new Scanner(System.in);
+    HashSet<String> fio = new HashSet<>();
+
+    String name;
+    String sourname;
+    String number;
+    String country;
+    String password;
+    String passwordchek;
+    Integer choseface;
+
+    public Client(String name, String sourname, String number, String country, String password, String passwordchek, Integer choseface) {
+        this.name = name;
+        this.sourname = sourname;
+        this.number = number;
+        this.country = country;
+        this.password = password;
+        this.passwordchek = passwordchek;
+        this.choseface = choseface;
+    }
+
+    @Override
+    public void Face() {
+        System.out.println("Are you [Legal / Physical] person? (1 or 2)");
+        choseface = in.nextInt();
+        if(choseface == 1) {
+            Fio();
+        }
+        if(choseface == 2) {
+            Fio();
+        }
+    }
+    public void Fio() {
+        System.out.print("Input your name: ");
+        name = in.nextLine();
+        fio.add(name);
+        System.out.println("Input your sourname: ");
+        sourname = in.nextLine();
+        fio.add(sourname);
+        System.out.println("Input your number phone: (+38 ");
+        number = in.nextLine();
+        fio.add(number);
+        System.out.println("Input yout country: ");
+        country = in.nextLine();
+        fio.add(country);
+        System.out.println("Create your password: ");
+        password = in.nextLine();
+        System.out.println("Input your password: ");
+        passwordchek = in.nextLine();
+
+        for (int i = 0; i < 1; i++) {
+            if ((password).equals(passwordchek) == true) {
+                System.out.println("Password confirmed successfully!");
+                Iterator<String> itr = fio.iterator();
+                while(itr.hasNext()) {
+                    System.out.println(itr.next());
+                }
+                for(int w = 0; w <= 10; w++) {
+                    System.out.print("-");
+                }
+                System.out.println();
+                System.out.println("Sync successfully!\nWelcome.");
+            } else
+                System.out.println("Passwords do not match. Try again!");
+            break;
+        }
+
+    }
+}
